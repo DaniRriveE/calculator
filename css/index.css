@@ -1,0 +1,53 @@
+button {
+  width: 65px;
+  height: 55px;
+  margin: 5px;
+  position: relative;
+  float: left;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 20px;
+  margin: 16px;
+}
+
+.digits {
+  width: 310px;
+  height: 335px;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.digits button {
+    background-color: grey;
+    color: white;
+}
+
+.clear, .erase-one {
+    background-color: #ffc4c4;
+}
+
+.tripleWidth {
+  width: 160px;
+}
+
+.display {
+  width: 230px;
+  background-color: rgb(239, 239, 239);
+  text-align: right;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 34px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.calculator {
+  margin: 20px;
+  padding: 5px;
+  width: 295px;
+  height: 700px;
+  background-color: rgb(200, 200, 200);
+  border-radius: 3px;
+  position: relative;
+}
