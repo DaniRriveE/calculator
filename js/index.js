@@ -14,7 +14,8 @@ function operatorPressed(ev) {
     const btn = ev.target;
     const display = document.querySelector('.display');
     if (display.value.length > 0) {
-        if (['+', '-', '*', '/'].indexOf(display.value[display.value.length - 1]) === -1) {
+        // if (['+', '-', '*', '/'].indexOf(display.value[display.value.length - 1]) === -1) {
+            if (!['+', '-', '*', '/'].includes(display.value[display.value.length - 1])) {
             display.value += btn.innerText;
         } else {
             display.value = display.value.slice(0, -1) + btn.innerText;
@@ -25,14 +26,14 @@ function operatorPressed(ev) {
 document.querySelector('.calculator .eq').addEventListener('click', eqPressed);
 function eqPressed() {
     const display = document.querySelector('.display');
-    display.value = eval(display.value).toFixed(2);
-    if (display.value === "Infinity" || display.value === "-Infinity") display.value = "Error";
+    const precision = 10000000000;
+    display.value = Math.round(eval(display.value) * precision) / precision;
+    if (Math.abs(display.value) === "Infinity") display.value = "Error";
 }
 
 document.querySelector('.calculator .clear').addEventListener('click', clearPressed);
 function clearPressed() {
-    const display = document.querySelector('.display');
-    display.value = "";
+    document.querySelector('.display').value = "";
 }
 
 document.querySelector('.calculator .erase-one').addEventListener('click', eraseOnePressed);
